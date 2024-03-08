@@ -44,7 +44,7 @@ button {
   margin-right: 10px;
 
   &:hover {
-    opacity: 0,8;
+    opacity: 1;
   }
 }
 
