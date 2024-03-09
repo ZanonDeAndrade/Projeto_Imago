@@ -2,33 +2,13 @@ import { useState } from 'react';
 import Todo from './components/Todo'; 
 import TodoForm from './components/TodoForm';
 import Search from './components/Search';
-import "./App.css";
 import Filter from './components/Filter';
+import "./App.css";
 
 
 function App() {
 
   const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "Fazer relatório",
-      category: "Trabalho",
-      isCompleted: false,
-    },
-
-    {
-      id: 2,
-      text: "Ir para academia",
-      category: "Pessoal",
-      isCompleted: false,
-    },
-
-    {
-      id: 3,
-      text: "Estudar para a prova",
-      category: "Estudos",
-      isCompleted: false,
-    },
   ]);
 
   const [search, setSearch] = useState("");
@@ -66,7 +46,7 @@ const completeTodo = (id) => {
     <div className='todo-list'>
       {todos
       .filter((todo) => filter === "All" ? true : filter === "Completed" ? todo.isCompleted : !todo.isCompleted)
-      
+
       .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase())).map((todo)=>(
         <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>   
       ))}

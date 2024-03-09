@@ -13,25 +13,6 @@ body {
   border-radius: 30px;
 }
 
-h1 {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  text-shadow: 2px 2px white;
-
-  h2 {
-    margin-bottom: 10px;
-  }
-}
-
-p {
-  margin: 10px 0;
-}
-
-input {
-  box-sizing: border-box;
-}
-
 button {
   background-color: #000;
   color: #ffff;
