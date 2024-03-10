@@ -58,6 +58,10 @@ button {
   outline: 1px solid black;
 }
 
+.edit{
+  outline: 1.5px solid black;
+}
+
 .todo-form {
   padding-bottom: 1.5rem;
 }
