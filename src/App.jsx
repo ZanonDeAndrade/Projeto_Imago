@@ -26,6 +26,7 @@ function App() {
 
   setTodos(newTodo)
 };
+  
 
 const removeTodo = (id) => {
   const newTodos = [...todos]

@@ -1,4 +1,6 @@
 import React from 'react'
+import { CiEdit } from "react-icons/ci";
+
 
 const todo = ({ todo, removeTodo, completeTodo }) => {
   return (
@@ -11,7 +13,8 @@ const todo = ({ todo, removeTodo, completeTodo }) => {
           </div>
           <div>
             <button className='complete' onClick={()=> completeTodo(todo.id)}><b>Completar</b></button>
-            <button className='remove' onClick={()=> removeTodo(todo.id)}><b>X</b></button>
+            <button className='edit' > <CiEdit/> <b>Editar</b> </button>
+            <button className='remove' onClick={()=> removeTodo(todo.id)}><b>X</b></button> 
           </div>
     </div>
   )
