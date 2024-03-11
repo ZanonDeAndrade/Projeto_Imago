@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Todo from './components/Todo';
 import TodoForm from './components/TodoForm';
 import Search from './components/Search';
-import Filter from './components/Filter';
+import Filter from './components/Filter'; 
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
