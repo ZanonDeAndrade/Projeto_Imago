@@ -31,8 +31,8 @@ const Todo = ({ todo, removeTodo, completeTodo, editTodo }) => {
           <div>
             <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} />
             <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} />
-            <button onClick={handleSaveEdit}>Salvar</button>
-            <button onClick={handleCancelEdit}>Cancelar</button>
+            <button className='save' onClick={handleSaveEdit}>Salvar</button>
+            <button className='cancel' onClick={handleCancelEdit}>Cancelar</button>
           </div>
         ) : (
           <div>

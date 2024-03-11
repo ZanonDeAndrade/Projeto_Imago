@@ -3,7 +3,6 @@ import Todo from './components/Todo';
 import TodoForm from './components/TodoForm';
 import Search from './components/Search';
 import Filter from './components/Filter';
-import "./App.css";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
