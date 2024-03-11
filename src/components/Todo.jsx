@@ -1,26 +1,55 @@
+import React, { useState } from "react";
+import { FaCheck, FaTrashAlt } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
 
-import { CiEdit } from "react-icons/ci";
-import { FaCheck } from "react-icons/fa";
-import { FaTrashAlt } from "react-icons/fa";
+const Todo = ({ todo, removeTodo, completeTodo, editTodo }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [newText, setNewText] = useState(todo.text);
+  const [newCategory, setNewCategory] = useState(todo.category);
 
-const todo = ({ todo, removeTodo, completeTodo }) => {
+  const handleEditClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleSaveEdit = () => {
+    if (newText.trim() !== "" && newCategory.trim() !== "") {
+      editTodo(todo.id, newText, newCategory);
+      setIsEditing(false);
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditing(false);
+    setNewText(todo.text);
+    setNewCategory(todo.category);
+  };
+
   return (
     <div className='todo' style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
-          <div className='content'>
-            <p>
-              {todo.text}
-            </p>
+      <div className='content'>
+        {isEditing ? (
+          <div>
+            <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} />
+            <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} />
+            <button onClick={handleSaveEdit}>Salvar</button>
+            <button onClick={handleCancelEdit}>Cancelar</button>
+          </div>
+        ) : (
+          <div>
+            <p>{todo.text}</p>
             <p className='category'>({todo.category})</p>
           </div>
-          <div>
-            <button className='complete' onClick={()=> completeTodo(todo.id)}><FaCheck/> <b>Completar</b></button>
-            <br></br>
-            <button className='edit' ><CiEdit/> <b>Editar</b></button>
-            <br></br>
-            <button className='remove' onClick={()=> removeTodo(todo.id)}><FaTrashAlt/> <b>Excluir</b></button> 
-          </div>
+        )}
+      </div>
+      <div>
+        <button className='complete' onClick={() => completeTodo(todo.id)}><FaCheck /> <b>Completar</b></button>
+        <br />
+        <button className='edit' onClick={handleEditClick}><MdEdit /> <b>Editar</b></button>
+        <br />
+        <button className='remove' onClick={() => removeTodo(todo.id)}><FaTrashAlt /> <b>Excluir</b></button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default todo
+export default Todo;

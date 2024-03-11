@@ -1,39 +1,25 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-function TodoForm({ addTodo }) {
-
-    const [value, setValue] = useState ("");
+const TodoForm = ({ addTodo }) => {
+    const [text, setText] = useState("");
     const [category, setCategory] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!value || !category) return;
-        addTodo (value, category);
-        setValue ("");
-        setCategory ("");
+        if (text.trim() !== "") {
+            addTodo(text, category);
+            setText("");
+            setCategory("");
+        }
     };
 
-
-  return (
-    <div className='todo-Form'>
-        <h2>
-            Criar Nova Tarefa:
-        </h2>
+    return (
         <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='Digite o Titulo' 
-            value={value}
-            onChange={(e) => setValue(e.target.value)}/>
-
-                <select value={category} on onChange={(e) => setCategory(e.target.value)}>
-                    <option value="">Selecione uma categoria</option>
-                    <option value="Trabalho">Trabalho</option>
-                    <option value="Pessoal">Pessoal</option>
-                    <option value="Estudos">Estudos</option>
-                </select>
-                <button type='submit'>Criar Tarefa</button>
+            <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Nova Tarefa" />
+            <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Categoria" />
+            <button type="submit">Adicionar</button>
         </form>
-    </div>
-  )
-}
+    );
+};
 
-export default TodoForm  
+export default TodoForm
