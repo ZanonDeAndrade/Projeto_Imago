@@ -22,7 +22,7 @@ function TodoForm({ addTodo }) {
         <form onSubmit={handleSubmit}>
             <input type='text' placeholder='Digite o Titulo' 
             value={value}
-            on onChange={(e) => setValue(e.target.value)}/>
+            onChange={(e) => setValue(e.target.value)}/>
 
                 <select value={category} on onChange={(e) => setCategory(e.target.value)}>
                     <option value="">Selecione uma categoria</option>

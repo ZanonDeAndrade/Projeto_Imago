@@ -51,15 +51,22 @@ button {
   display: inline;
   background-color: #5cb85c;
   outline: 1px solid black;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .remove {
   background-color: #d9534f;
   outline: 1px solid black;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .edit{
   outline: 1.5px solid black;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .todo-form {

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { CiEdit } from "react-icons/ci";
 import { FaCheck } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
@@ -13,9 +13,11 @@ const todo = ({ todo, removeTodo, completeTodo }) => {
             <p className='category'>({todo.category})</p>
           </div>
           <div>
-            <button className='complete' onClick={()=> completeTodo(todo.id)}><FaCheck/></button>
-            <button className='edit' > <CiEdit/> </button>
-            <button className='remove' onClick={()=> removeTodo(todo.id)}><FaTrashAlt/></button> 
+            <button className='complete' onClick={()=> completeTodo(todo.id)}><FaCheck/> <b>Completar</b></button>
+            <br></br>
+            <button className='edit' ><CiEdit/> <b>Editar</b></button>
+            <br></br>
+            <button className='remove' onClick={()=> removeTodo(todo.id)}><FaTrashAlt/> <b>Excluir</b></button> 
           </div>
     </div>
   )
