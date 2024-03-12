@@ -28,7 +28,7 @@ const Todo = ({ todo, removeTodo, completeTodo, editTodo }) => {
     <div className='todo' style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
       <div className='content'>
         {isEditing ? (
-          <div>
+          <div className="new">
             <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} />
             <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)} />
             <button className='save' onClick={handleSaveEdit}>Salvar</button>
@@ -43,9 +43,7 @@ const Todo = ({ todo, removeTodo, completeTodo, editTodo }) => {
       </div>
       <div>
         <button className='complete' onClick={() => completeTodo(todo.id)}><FaCheck /> <b>Completar</b></button>
-        <br />
         <button className='edit' onClick={handleEditClick}><MdEdit /> <b>Editar</b></button>
-        <br />
         <button className='remove' onClick={() => removeTodo(todo.id)}><FaTrashAlt /> <b>Excluir</b></button>
       </div>
     </div>
