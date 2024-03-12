@@ -24,8 +24,6 @@ function App() {
 
       const updatedTodos = [...todos, newTodo];
       setTodos(updatedTodos);
-    } else {
-      console.error("Texto e categoria são necessários para uma nova tarefa.");
     }
   };
 
